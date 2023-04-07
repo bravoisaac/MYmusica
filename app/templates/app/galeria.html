@@ -1,0 +1,27 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block js %}
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+{% endblock %}
+
+{% block contenido %}
+<h2>Galería de nuestra tienda</h2>
+<br><br>
+<div class="galeria">
+     <a data-fancybox="gallery" href="{% static 'app/img/tienda/galeria1.png' %}"><img src="{% static 'app/img/tienda/galeria1.png' %}"></a>
+     <a data-fancybox="gallery" href="{% static 'app/img/tienda/galeria2.jpg' %}"><img src="{% static 'app/img/tienda/galeria2.jpg' %}"></a>
+     <a data-fancybox="gallery" href="{% static 'app/img/tienda/galeria3.jpg' %}"><img src="{% static 'app/img/tienda/galeria3.jpg' %}"></a>
+     <a data-fancybox="gallery" href="{% static 'app/img/tienda/galeria4.jpg' %}"><img src="{% static 'app/img/tienda/galeria4.jpg' %}"></a>
+     <a data-fancybox="gallery" href="{% static 'app/img/tienda/galeria5.webp' %}"><img src="{% static 'app/img/tienda/galeria5.webp' %}"></a>     
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block js %}
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script>
+    $(document).ready(function() {
+      $('.slider').bxSlider({
+          mode: 'fade',//horizontal, vertical, fade
+          auto: true,
+          pause: 2000
+      });
+    });
+</script>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+{% endblock %}
+
+{% block contenido %}
+
+
+<div class="slider">
+    <div>
+        <img src="{% static 'app/img/banner/banner-1.jpg' %}" alt="">
+    </div>
+    <div>
+        <img src="{% static 'app/img/banner/banner-2.jpg' %}" alt="">
+    </div>
+    <div>
+        <img src="{% static 'app/img/banner/banner-3.jpg' %}" alt="">
+    </div>
+</div>
+
+<h2>Productos</h2>
+<div class="productos">
+
+<div class="producto">
+
+    <div class="contenedor_producto">
+
+        <img src="{% static 'app/img/piano.webp' %}" alt="imagen producto">
+        <div class="detalle">
+            <h5>casio</h5>
+            <h2>piano</h2>
+            <h3>$520.000</h3>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="producto">
+
+    <div class="contenedor_producto">
+
+        <img src="{% static 'app/img/box.webp' %}" alt="imagen producto">
+        <div class="detalle">
+            <h5>boss</h5>
+            <h2>amplificador</h2>
+            <h3>$200.000</h3>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="producto">
+
+    <div class="contenedor_producto">
+
+        <img src="{% static 'app/img/micro.webp' %}" alt="imagen producto">
+        <div class="detalle">
+            <h5>shure</h5>
+            <h2>micrifono</h2>
+            <h3>$50.000</h3>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="producto">
+
+    <div class="contenedor_producto">
+
+        <img src="{% static 'app/img/gitara.webp' %}" alt="imagen producto">
+        <div class="detalle">
+            <h5>LTD</h5>
+            <h2>gitarra</h2>
+            <h3>$400.000</h3>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="producto">
+
+    <div class="contenedor_producto">
+
+        <img src="{% static 'app/img/bateri.webp' %}" alt="imagen producto">
+        <div class="detalle">
+            <h5>roland</h5>
+            <h2>bateria</h2>
+            <h3>$600.000</h3>
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+        
+{% endblock %}
