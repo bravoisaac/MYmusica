@@ -13,7 +13,22 @@
 {% block contenido %}
 <div id="contenido">
     <h2>Contactanos!</h2>
-    <form action="" class="formulario_contacto" id="formulario_contacto">
+    <form action="" class="formulario_contacto" method="post">
+        
+        {% csrf_token %} 
+
+        {{ form }}
+
+        <br>
+        <button type="submit" id="btnEnviar" class="button">Enviar</button>
+        
+    </form>
+    {{ mensaje }}
+
+    <table id="tablacontactos">
+    </table>
+
+    <!--
         <label for="nombre">Nombre</label>
         <input type="text" id="nombre" name="nombre">
         <br>
@@ -37,34 +52,7 @@
         <br>
         <input type="checkbox" name="avisos" id="avisos" checked>
         <label for="avisos">¿Desea recibir promociones/avisos a su email?</label>
-        <br>
-        <!--
-        
-        <label for="">Sexo</label>
-        <label for="masculino">Masculino</label>
-        <input type="radio" name="sexo" id="masculino" checked>
-        <label for="femenino">Femenino</label>
-        <input type="radio" name="sexo" id="femenino">
-
-        <br>
-        
-        <label for="fechanacimiento">Fecha nacimiento</label>
-        <input type="date" name="fechanacimiento" id="fechanacimiento">
-        <br>
-        <label for="color">Color</label>
-        <input type="color" name="color" id="color">
-        
-        <br>
-        <input type="datetime-local" name="" id="">-->
-
-        <button type="button" id="btnEnviar" class="button">Enviar</button>
-        
-
-    </form>
-
-    <table id="tablacontactos">
-        
-    </table>
+        >-->
 
 
 </div>

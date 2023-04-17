@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from .forms import LoginForm
+from .models import Contacto
 from django.contrib.auth.models import User
 from .forms import RegisterForm
+from .forms import ContactoForm
 
 # Create your views here.
 
@@ -12,7 +14,18 @@ def galeria(request):
     return render(request, 'app/galeria.html')
 
 def contacto(request):
-    return render(request, 'app/contacto.html')
+    data = {
+        'form': ContactoForm()
+    }
+    
+    if request.method == "POST":
+        formulario = ContactoForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "mensaje guardado"
+        else:
+            data["form"] = formulario
+    return render(request, 'app/contacto.html', data)
 
 def login(request):
     form = LoginForm()
@@ -30,3 +43,4 @@ def registro(request):
     else:
         form = RegisterForm()
     return render(request, 'app/registro.html', {'form': form})
+
